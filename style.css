@@ -1,0 +1,1129 @@
+*, *:after, *:before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	scroll-behavior: smooth;
+}
+
+li, a {
+	list-style: none;
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	object-fit: cover;
+}
+
+
+/*--- lenis setup ---*/
+
+/*html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+*/
+/*--- roots ---*/
+
+:root {
+
+	/*--- colors ---*/
+
+	--color-black: rgba(0,0,0,1);
+--color-dark: rgba(37,37,37, 1);
+--color-dark-lite: rgba(37,37,37, 0.9);
+--color-dark-b: rgba(45,64,70, 1);
+--color-one: rgba(3, 30, 73, 1);
+--color-two: rgba(69, 153, 254, 1);
+--color-two-lite: rgba(69, 153, 254, 0.2);
+--color-three: rgba(184, 202, 209, 1);
+--color-four: rgba(238, 4, 5, 1);
+--color-four-lite: rgba(238, 4, 5, 0.2);
+--color-light: rgba(255, 253, 254, 1);
+--color-footer: #6f6f6f;;
+
+
+	/*--- font size ---*/
+
+	--font-size-large: 4rem;
+
+	/*--- letter-spacing ---*/
+
+	--letter-spacing-minimal: 1px;
+	--letter-spacing-light: 2px;
+
+
+	/*--- padding ---*/
+
+	--padding-minimal: 0.5em;
+	--padding-light: 1em;
+	--padding-medium: 2em;
+	--padding-large: 3em;
+	--padding-x-large: 6em;
+
+
+	/*--- transitions ---*/
+
+	--transition-zero: all 0.005s ease;
+	--transition-minimal: all 0.4s ease-in-out;
+	--transition-light: all 0.5s ease-in-out;
+
+}
+
+
+
+.frame {
+	width: 100%;
+	min-height: 100vh;
+	position: relative;
+	overflow: hidden;
+	perspective: 800px;
+	/*background-color: lightblue;
+	display: flex;
+	justify-content: center;
+	align-items: center;*/
+}
+
+
+/*--- section 1: hero styling ---*/
+
+/*--- header: the logo and navigation --- */
+
+.hero__navigation-bar, .navlinks-wrapper, .logo-wrapper, .find-your-bmw__selector {
+	width: 100%;
+	min-height: 1em;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.logo-wrapper {
+	width: 25%;
+	justify-content: space-around;
+	color: var(--color-light);
+
+}
+
+.logo-text {
+	font-family: 'BMW Helvetica 75';
+}
+
+.slogan {
+	color: var(--color-two);
+}
+
+.hero__navigation-bar {
+	padding: 3em 3em 1em;
+	z-index: 999;
+}
+.navlinks-wrapper {
+	width: 60%;
+	gap: 1em;
+}
+
+
+.navlink {
+	color: var(--color-light);
+	transition: color 0.5s ease;
+	letter-spacing: 1px;
+}
+
+
+.navlink:hover, .navlink:focus, .navlink:focus-within {
+	color: var(--color-two);
+}
+
+
+.burger-group {
+		width: 80px;
+		height: 80px;
+		display: none;
+		place-content: center;
+		transform: scale(0.8);
+		position: absolute;
+		top: 2%;
+		right: 4%;
+		cursor: pointer;
+		transform-origin: center;
+		transition: var(--transition-light);
+	}
+
+.slice {
+	width: 40px;
+	height: 5px;
+	background-color: var(--color-light);
+	border-radius: 20px;
+	margin-top: var(--padding-minimal);
+	transition: var(--transition-light);
+}
+
+
+.slice-top {
+	transform: rotate(0) translate(0);
+}
+
+.slice-btm {
+	transform: rotate(0) translate(0);
+}
+
+
+/*.close-menu-btn {
+	display: none;
+}
+*/
+/*--- the video background styling */
+
+.video-overlay, .video-showcase{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.6);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.video-overlay {
+	z-index: -1;
+}
+
+.video-showcase {
+	background: transparent;
+	object-fit: cover;
+	object-position: bottom left;
+	z-index: -50;
+}
+
+/*--- hero text styling ---*/
+
+.hero__text-wrapper {
+	padding: 8em 4em;
+	color: var(--color-light);
+}
+
+.hero__title{
+	font-size: 4em;
+	line-height: 1.2;
+}
+
+.hero__title span {
+	display: block;
+}
+
+.hero__description {
+	margin: 1em 0;
+	letter-spacing: 1.8px;
+}
+
+.cta-wrapper, .cta-wrapper--podcasts {
+	min-width: 2em;
+	width: 12em;
+	min-height: 0.5em;
+	display: grid;
+	place-content: center;
+	padding: 0.5em;
+	border-radius: 3em;
+	background: var(--color-four);
+	transition: background 0.5s ease;
+}
+
+.cta-link {
+	color: var(--color-light);
+	font-weight: 600;
+	letter-spacing: 1px;
+}
+
+.cta-wrapper:hover, .cta-wrapper:focus, .cta-wrapper:focus-within, .cta-wrapper--podcasts:hover, .cta-wrapper--podcasts:focus, .cta-wrapper--podcasts:focus-within {
+	background: linear-gradient(45deg, var(--color-four), var(--color-two));
+}
+
+
+ /*--- toggle video-backgroundstyling --- */
+
+ .play-pause-video__wrapper {
+ 	width: 40px;	
+ 	height: 40px;	
+ 	border: 0.1em solid var(--color-three);
+ 	border-left-color: transparent;
+ 	border-right-color: transparent;
+ 	border-radius: 50%;
+ 	position: absolute;
+ 	bottom: 2.5em;
+ 	right: 4em;
+ 	display: flex;
+ 	justify-content: center;
+ 	align-items: center;
+ 	cursor: pointer;
+ 	transform: scale(0.5);
+ 	animation: 4s ease-in-out alternate infinite animate-videoplay-prompt;
+ 	transition: var(--transition-light);
+ }
+
+ @keyframes animate-videoplay-prompt {
+ 	to {transform: scale(0.3) rotateY(45deg)};
+ }
+
+
+ .play-pause-video__outer-div {
+ 	width: 30px;
+ 	height: 30px;
+ 	border-radius: 50%;
+ 	border: 0.1em solid var(--color-three);
+ 	border-left-color: transparent;
+ 	border-right-color: transparent;
+ 	display: flex;
+ 	justify-content: center;
+ 	align-items: center;
+ 	transition: var(--transition-light);
+
+ }
+
+ .play-pause-video__inner-div {
+ 	width: 15px;
+ 	height: 15px;
+ 	border-radius: 50%;
+ 	background: var(--color-three);
+ 	transition: var(--transition-light);
+
+ }
+
+
+  .play-pause-video__outer-div:hover,  .play-pause-video__outer-div:focus,  .play-pause-video__outer-div:focus-within {
+ 	border: 0.1em solid var(--color-four);
+  	
+  }
+
+   .play-pause-video__inner-div:hover,  .play-pause-video__inner-div:focus,  .play-pause-video__inner-div:focus-within {
+  	background: var(--color-four);
+  }
+
+
+  .play-pause-video__wrapper:hover,  .play-pause-video__wrapper:focus,  .play-pause-video__wrapper:focus-within {
+ 	border: 0.1em solid var(--color-two);
+  	
+  }
+
+
+  /*--- notification alert styling ---*/
+
+  .notification__wrapper {
+  	position: absolute;
+  	width: 50em;
+  	min-height: 10em;
+  	padding: var(--padding-large);
+  	background: var(--color-dark);
+  	color: var(--color-three);
+  	top: 20%;
+  	left: 50%;
+  	transform: translate(-50%, 20%);
+  	display: grid;
+  	place-content: center;
+  	border-radius: var(--padding-light);
+  	border: var(--padding-light) solid var(--color-light);
+  	transition: var(--transition-light);
+  	visibility: hidden;
+
+  }
+
+  .notification__container {
+  	opacity: 0;
+  }
+
+  .notification__contents, .notification__author {
+  	width: 100%;
+  	height: 100%;
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	flex-direction: column;
+
+  }
+
+  .notification__text {
+  	max-width: 45ch;
+  	margin-bottom: var(--padding-light);
+  }
+
+  .notification__logo {
+  	margin: 0 var(--padding-minimal);
+  }
+
+  .notification__author {
+  	flex-direction: row;
+  }
+
+  .author__name {
+  	animation: 3s ease-in-out alternate infinite colorswitch;
+  	letter-spacing: var(--letter-spacing-minimal);
+
+  }
+
+  @keyframes colorswitch {
+  	to {
+  		color: var(--color-two);
+  	}
+  }
+  .button-wrapper {
+  	min-width: 6em;
+  	min-height: var(--padding-light);
+  	padding: var(--padding-light);
+  	margin: var(--padding-light) 0;
+  	background: var(--color-light);
+  	display: grid;
+  	place-content: center;
+  	border-radius: var(--padding-minimal);
+  	transition: var(--transition-light);
+  	z-index: 999;
+
+
+  }
+
+  .button {
+  	outline: 0;
+  	border: 0;
+  	background: transparent;
+  	color: var(--color-dark);
+  	letter-spacing: var(--letter-spacing-minimal);
+  	font-weight: 600;
+  	cursor: pointer;
+
+  }
+
+  .button-wrapper:hover, .button-wrapper:focus, .button-wrapper:focus-within {
+  	background: var(--color-four);
+  }
+
+  /*--- section 2: the find your bmw styling --- */
+
+  .find-your-bmw__wrapper {
+  	width: 100%;
+  	min-height: 100vh;
+  	display: flex;
+  	flex-direction: column;
+ 	justify-content: center;
+ 	align-items: center;
+ 	gap: 2em;
+ 	background: linear-gradient(45deg, var(--color-light), var(--color-four))
+  }
+
+  .red-bmw-wrapper {
+  	/*border: 1px solid red;*/
+  }
+
+  .red-bmw {
+  	transform: rotateY(180deg);
+  	transform-origin: right;
+  	filter: hue-rotate(0deg);
+  	filter: brightness(90%);
+  	animation: 3s ease-in-out alternate infinite;
+  }
+
+
+  @keyframes huerotate {
+  	100%{
+  	filter: hue-rotate(360deg);
+
+
+  	}
+  }
+
+ /* .red-bmw:nth-child(1) {
+  	filter: hue-rotate(315deg);
+  }
+  .red-bmw:nth-child(2) {
+  	filter: hue-rotate(180deg);
+  }
+
+  .red-bmw:nth-child() {
+  	filter: hue-rotate(180deg);
+  }*/
+
+  /*--- text wrapper ---*/
+
+  .find-your-bmw__text-wrapper{
+  	width: 100%;
+  	height: 100%;
+  	text-align: center;
+  	letter-spacing: var(--letter-spacing-light);
+  	position: relative;
+  }
+
+  .find-your-bmw__title {
+  	font-size: var(--font-size-large);
+  	color: var(--color-light);
+  }
+
+  .find-your-bmw__selector {
+  	margin: 0 auto;
+  	width: 360px;
+  }
+
+  .search-country {
+  	outline: 0;
+  	border: 0;
+  	background: transparent;
+  	color: var(--color-light);
+  	
+  }
+  .input-wrapper {
+  	background: var(--color-dark);
+  	border-radius: 1em;
+  	padding: 5px 16px;
+  	color: var(--color-light);
+  	display: flex;
+  	justify-content: space-around;
+  	align-items: center;
+  	position: relative;
+
+  }
+
+  ::placeholder {
+  	color: var(--color-light);
+  	letter-spacing: var(--letter-spacing-light);
+
+  }
+
+
+  .search-icon {
+  	position: absolute;
+  	top: 7px;
+  	right: 15px;
+  	cursor: pointer;
+  }
+
+
+
+ /*--- section 3: the podcasts styling --- */
+
+ .podcasts__wrapper {
+ 	width: 100%;
+ 	min-height: 100vh;
+ 	background-color: var(--color-light);
+ 	padding: var(--padding-large) var(--padding-large) var(--padding-x-large);
+ }
+
+ .text-media {
+ 	width: 100%;
+ 	height: 100%;
+ 	display: flex;
+ 	justify-content: space-around;
+ 	align-items: center;
+ }
+
+ .text-media__left {
+ 	width: 50%;
+
+ }
+
+ .text-media__title {
+ 	text-align: center;
+ 	margin: var(--padding-medium);
+ 	letter-spacing: var(--letter-spacing-light);
+ }
+
+ .text-media__title--title {
+ 	font-weight: 900;
+ 	font-size: 5rem;
+ 	line-height: 1.1;
+ }
+
+ .line {
+ 	margin: var(--padding-minimal) 0 var(--padding-large);
+ 	background: #000;
+ 	width: 10em;
+ 	height: 0.2em;
+ }
+
+ .text-media__description {
+ 	max-width: 75ch;
+ 	flex-wrap: wrap;
+ 	opacity: 0.95;
+ 	color: var(--color-dark-b);
+ 	letter-spacing: var(--letter-spacing-minimal);
+ 	font-size: 0.9em;
+ 	line-height: 2;
+
+ }
+
+ /* --- streaming platforms --- */
+
+/*--- streaming logos -- */
+ .text-media__streaming-wrapper {
+ 	/*width: 50%;*/
+ 	display: flex;
+ 	flex-direction: row;
+ 	flex-wrap: wrap;
+ 	margin: var(--padding-light) 0;
+
+ }
+
+ .text-media__links-media {
+ 	display: grid;
+ 	place-content: center;
+ 	padding: var(--padding-medium);
+ 	background: var(--color-dark);
+
+ }
+
+
+
+.stream-logo {
+ 	margin: 0.5em;
+    width: 6rem;
+    height: auto;
+    transition: var(--transition-minimal);
+}
+
+.text-media__links {
+	width: 50%;
+ 	flex-wrap: wrap;
+	display: grid;
+ 	grid-template-columns: repeat(2, 1fr);
+}
+
+.stream-logo:hover, .stream-logo:focus, .stream-logo:focus-within {
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+
+.image-wrapper--podcasts {
+	width: 250px;
+	height: 250px;
+	overflow: hidden;
+}
+
+.podcast-cover {
+	/*width: 80px;*/
+	max-width: 100%;
+	object-fit: cover;
+ 	margin: var(--padding-minimal);
+ 	transition: var(--transition-light);
+
+}
+
+.podcast-cover:hover, .podcast-cover:focus, .podcast-cover:focus-within {
+    transform: scale(0.8) translateY(-5px);
+    box-shadow: 0px -5px 100px var(--color-two-lite);
+}
+
+.podcast-cover:nth-child(3) {
+	object-position: bottom;
+}
+
+.cta-wrapper--podcasts {
+	background: var(--color-dark);
+}
+
+
+
+
+/*--- section 4: the scrolling images effect styling---*/
+
+
+.scrolling-images {
+	width: 100%;
+	min-height: 100vh;
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.5)), url('media/bmw-suv.png');
+	background-position: top left;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.scroll-image-wrapper {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 4em;
+	font-weight: 600;
+}
+
+.scroll-image-wrapper:nth-child(1) {
+	/*display: flex;
+	flex-direction: column;*/
+	position: relative;
+	background: var(--color-light);
+	overflow: hidden;
+	cursor: pointer;
+
+}
+
+.stripes--class-a {
+	transform-origin: center;
+	transform: rotateZ(37deg);
+}
+
+.stripes--class-b {
+	position: absolute;
+	top: 50%;
+	left: 47%;
+	transform-origin: center;
+	transform: rotateZ(45deg);
+}
+
+
+.line-stripe {
+	height: 1px;
+	width: 150vw;
+	margin: 2px;
+}
+
+
+
+.date {
+	position: absolute;
+	top: 20%;
+	right: 0.8em;
+}
+
+.date-b {
+	position: absolute;
+	top: 32%;
+	right: 0.8em;
+	color: var(--color-two);
+}
+
+.releases {
+	font-size: 16px;
+	position: absolute;
+	top: 48%;
+	right: 3em;
+	letter-spacing: var(--letter-spacing-minimal);
+}
+
+
+.cta-wrapper--podcasts__releases {
+	position: absolute;
+	top: 52%;
+	right: 0.6em;
+	width: 3em;
+	padding: 8px;
+}
+
+.cta-link__releases {
+	font-size: 16px;
+}
+
+.scroll-image-wrapper:nth-child(2) {
+	background: red;
+	display: none;
+}
+
+.scroll-image-wrapper:nth-child(3) {
+	background: orange;
+	display: none;
+}
+
+.scroll-image-wrapper:nth-child(4) {
+	background: peru;
+	display: none;
+}
+
+.scroll-image-wrapper:nth-child(5) {
+	position: relative;
+	background: var(--color-light);
+	height: 5em;
+	display: flex;
+	justify-content: center;
+}
+
+
+
+.blue-bmw-wrapper {
+	position: absolute;
+	top: 15%;
+	left: 1em;
+}
+.blue-bmw {
+	width: 8em;
+}
+
+/*--- section 5: the benefits styling --- */
+
+.benefits__wrapper {
+	transition: var(--transition-light);
+}
+.benefits__text {
+	font-size: 0.6em;
+	color: var(--color-dark);
+	transition: var(--transition-light);
+
+}
+
+
+/*--- section 6: the footer styling --- */
+
+.footer__wrapper {
+	width: 100%;
+	min-height: 100vh;
+	background-color: var(--color-dark);
+	color: var(--color-three);
+	padding: var(--padding-large);
+	background-image: linear-gradient(45deg, rgba(0,0,0,1), rgba(0,0,0,0)), url('media/munich.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+}
+
+.footer__classes {
+	width: 100%;
+	min-height: 100%;
+
+}
+
+footer a {
+	color: var(--color-three);
+
+}
+
+
+/*--- classes styling ---*/
+
+.class-1 {
+	margin-bottom: var(--padding-large);
+}
+
+.class-2 {
+	display: flex;
+	justify-content: center;
+	gap: 2em;
+	margin-bottom: var(--padding-medium);
+	letter-spacing: var(--letter-spacing-minimal);
+
+
+}
+
+.footer__line {
+	width: 7em;
+	height: 2px;
+	background: var(--color-three);
+}
+
+.footer__link {
+	font-size: 0.8em;
+	transition: var(--transition-light);
+}
+
+.footer__link:hover, .footer__link:focus, .footer__link:focus-within {
+	letter-spacing: var(--letter-spacing-minimal);
+	color: var(--color-two);
+}
+
+
+/*--- copyright ---*/
+
+.copyright {
+	text-align: center;
+	font-size: 0.8em;
+	letter-spacing: var(--letter-spacing-minimal);
+	color: var(--color-two);
+	font-weight: 300;
+
+}
+
+
+.open-menu-btn {
+	display: none;
+}
+
+.beamer {
+	display: none;
+}
+
+
+/*--- media queries ---*/
+
+
+/*--- 1200px ---*/
+
+
+@media  screen and (max-width: 1200px) {
+	/*.video-showcase {
+		display: none;
+	}*/
+
+.hero__navigation-bar {
+	padding: 1em 2em 1em;
+	z-index: 999;
+}
+.navlinks-wrapper {
+	width: 60%;
+	gap: 0.3em;
+}
+
+.text-media__links-media {
+	place-content: center;
+	transform: scale(0.8);
+}
+
+.podcasts__contents {
+	padding-bottom: var(--padding-large);
+}
+
+.text-media__title--title {
+	font-size: 3.5em;
+}
+
+.red-bmw {
+	display: none;
+}
+
+.beamer {
+
+	display: block;
+	position: absolute;
+	top: -30%;
+	left: -8%;
+	transform: translate(-8%, -30%) rotateY(180deg) scale(0.5);
+}
+.find-your-bmw__wrapper {
+	position: relative;
+}
+.find-your-bmw__text-wrapper {
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+}
+
+/*--- 992px ---*/
+
+@media  screen and (max-width: 992px) {
+	/*.video-showcase {
+		display: block;
+	}*/
+
+	.hero__title {
+		font-size: 3em;
+	}
+
+	.logo-wrapper {
+	width: 100%;
+	justify-content: center;
+	margin: var(--padding-light) 0;
+
+}
+	.hero__navigation-bar {
+		position: relative;
+		/*display: none;*/
+	}
+
+	.burger-group {
+		display: block;
+		position: relative;
+	}
+
+	.open-menu-btn {
+		display: block;
+		position: absolute;
+		top: 4%;
+		right: 4%;
+		z-index: 100;
+		cursor: pointer;
+	}
+
+	.navlinks-wrapper {
+		/*display: none;*/
+		position: absolute;
+		width: 50%;
+		min-height: 100vh;
+		background-color: var(--color-two);
+		top: 0;
+		right: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		z-index: 995;
+	}
+
+	.side-wrapper {
+		display: none;
+	}
+
+	.list-item {
+	display: block;
+	width: 100%;
+	padding: var(--padding-medium);
+	transition: var(--transition-zero);
+
+	}
+	.list-item:hover, .list-item:focus, .list-item:focus-within {
+	color: var(--color-three);
+	background-color: var(--color-dark);
+	
+
+}
+
+	.navlink:hover, .navlink:focus, .navlink:focus-within {
+	color: var(--color-three);
+}
+
+
+	.hero__title {
+		font-size: 3em;
+	}
+
+	.beamer {
+	display: block;
+	top: -45%;
+	left: -26%;
+	transform: translate(-26%, -45%) rotateY(180deg) scale(0.5);
+}
+
+.find-your-bmw__title {
+	font-size: 3em;
+}
+
+.text-media {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.text-media__title--title {
+	font-size: 2em;
+}
+
+.text-media__description {
+	max-width: 151%;
+	width: 150%;
+	padding-right: var(--padding-light);
+}
+
+
+
+
+.text-media__links-media {
+	display: block;
+	width: 100%;
+	background: transparent;
+}
+
+.scrolling-images {
+	display: none;
+}
+
+.class-2 {
+	flex-wrap: wrap;
+}
+}
+/*--- 768px ---*/
+
+
+@media  screen and (max-width: 768px) {
+/*
+.hero__title {
+		color: navy;
+	}*/
+
+.text-media__links-media {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+.open-menu-btn {
+		position: absolute;
+		top: 23%;
+		right: 4%;
+		z-index: 100;
+	}
+
+}
+
+
+/*--- 576px ---*/
+
+
+@media screen and (max-width: 576px) {
+
+	.frame {
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.5)), url('media/bmw-scooter-a.jpg');
+	background-position: top left;
+	background-size: cover;
+	background-repeat: no-repeat;
+	}
+
+	.video-overlay, .video-showcase {
+	display: none
+}
+
+
+
+
+	.hero__title {
+		/*color: coral;*/
+		font-size: 2rem;
+	}
+
+	.open-menu-btn {
+		position: absolute;
+		top: 28%;
+		right: 4%;
+		z-index: 100;
+	}
+
+	.hero__text-wrapper {
+		width: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: var(--padding-light) var(--padding-medium);
+}
+
+.footer__wrapper {
+	
+	background-position: left;
+	background-size: contain;
+	
+
+}
+
+ .play-pause-video__wrapper {
+	 display: none;
+ }
+
+
+
+
+}
+
+@media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
+
+
+	.navlinks-wrapper {
+	
+		width: 100%;
+	
+	}
+}
